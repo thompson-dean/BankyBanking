@@ -9,6 +9,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let stackView = UIStackView()
+    let bankBankingLogoLabel = UILabel()
+    let descriptionLabel = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorLabel = UILabel()
@@ -30,6 +33,23 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func style() {
+        
+        bankBankingLogoLabel.translatesAutoresizingMaskIntoConstraints = false
+        bankBankingLogoLabel.textAlignment = .center
+        bankBankingLogoLabel.text = "BankyBanking"
+        bankBankingLogoLabel.font = .systemFont(ofSize: 40)
+        
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.text = "Your premium source for all things banking!"
+        descriptionLabel.font = .systemFont(ofSize: 22)
+        descriptionLabel.numberOfLines = 2
+        descriptionLabel.textAlignment = .center
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.layer.cornerRadius = 5
+        
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
@@ -46,11 +66,20 @@ extension LoginViewController {
     }
     
     private func layout() {
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(bankBankingLogoLabel)
+        stackView.addArrangedSubview(descriptionLabel)
+        
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorLabel)
         
         NSLayoutConstraint.activate([
+            
+            //StackView
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+            loginView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 4),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
             
             //LoginView
             loginView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
