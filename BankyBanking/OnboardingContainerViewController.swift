@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 class OnboardingContainerViewController: UIViewController {
 
     let pageViewController: UIPageViewController
@@ -42,8 +40,6 @@ class OnboardingContainerViewController: UIViewController {
         setup()
         style()
         layout()
-        
-        
     }
     
     private func setup() {
@@ -82,11 +78,7 @@ class OnboardingContainerViewController: UIViewController {
             closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
             
-            
         ])
-        
-        
-        
     }
 }
 
