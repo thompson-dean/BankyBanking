@@ -12,6 +12,7 @@
 		2A68F204280D9197004154D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A68F203280D9197004154D0 /* Assets.xcassets */; };
 		2A68F207280D9197004154D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A68F205280D9197004154D0 /* LaunchScreen.storyboard */; };
 		2A68F211280D957A004154D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A68F210280D957A004154D0 /* LoginView.swift */; };
+		2A8830AB28126D5F00269FDB /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8830AA28126D5F00269FDB /* LocalState.swift */; };
 		2AF7C239280EED20005DEC89 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7C238280EED20005DEC89 /* OnboardingContainerViewController.swift */; };
 		2AF7C23B280EF341005DEC89 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7C23A280EF341005DEC89 /* OnboardingViewController.swift */; };
 		2AF7C23D28113AFF005DEC89 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF7C23C28113AFE005DEC89 /* DummyViewController.swift */; };
@@ -25,6 +26,7 @@
 		2A68F206280D9197004154D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A68F208280D9197004154D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A68F210280D957A004154D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2A8830AA28126D5F00269FDB /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		2AF7C238280EED20005DEC89 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		2AF7C23A280EF341005DEC89 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2AF7C23C28113AFE005DEC89 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		2A68F1F9280D9196004154D0 /* BankyBanking */ = {
 			isa = PBXGroup;
 			children = (
+				2A8830A928126D5000269FDB /* Utils */,
 				2AF7C237280EECF2005DEC89 /* Onboarding */,
 				2A68F20F280D9558004154D0 /* Login */,
 				2A68F20E280D9525004154D0 /* Files */,
@@ -86,6 +89,14 @@
 				2AF7C23C28113AFE005DEC89 /* DummyViewController.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		2A8830A928126D5000269FDB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2A8830AA28126D5F00269FDB /* LocalState.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		2AF7C237280EECF2005DEC89 /* Onboarding */ = {
@@ -168,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A68F211280D957A004154D0 /* LoginView.swift in Sources */,
+				2A8830AB28126D5F00269FDB /* LocalState.swift in Sources */,
 				2AF7C23D28113AFF005DEC89 /* DummyViewController.swift in Sources */,
 				2A68F1FF280D9196004154D0 /* LoginViewController.swift in Sources */,
 				2AF7C23B280EF341005DEC89 /* OnboardingViewController.swift in Sources */,
