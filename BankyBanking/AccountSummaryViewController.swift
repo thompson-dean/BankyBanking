@@ -25,6 +25,7 @@ class AccountSummaryViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.backgroundColor = appColor
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(AccountSummaryCell.self, forCellReuseIdentifier: AccountSummaryCell.reuseID)
