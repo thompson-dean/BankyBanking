@@ -62,6 +62,7 @@ class AccountSummaryCell: UITableViewCell {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = "Account Name"
+        nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +72,7 @@ class AccountSummaryCell: UITableViewCell {
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
+        balanceLabel.adjustsFontSizeToFitWidth = true
         balanceLabel.text = "Current balance"
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
