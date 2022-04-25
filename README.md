@@ -12,6 +12,7 @@ This course covered both of those topics so I decided to challenge myself and ta
 - Building Views programmatically. (Initializing Views, addSubView(), and NSLayoutConstraint.activate()) 
 - Onboarding using UIPageViewController.
 - Programmatic UITableView with MVVM architecture. Also learnt how to add a header to the tables(The header used a nib)
+- Delegate/Protocols vs Observers (Which to use in certain situations).
 - All data is taken from networking using URLSession and the Result type.
 - Animations (simple contraint animations and more complex animations like key frame animations).
 - how to use git in the terminal (git add, commit, squash, rebase, merge, pull, push, status, diff, log)
