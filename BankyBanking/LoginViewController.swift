@@ -18,7 +18,7 @@ protocol LoginViewControllerDelegate: AnyObject {
 class LoginViewController: UIViewController {
     
     let stackView = UIStackView()
-    let bankBankingLogoLabel = UILabel()
+    let bankyBankingLogoLabel = UILabel()
     let descriptionLabel = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
@@ -34,6 +34,12 @@ class LoginViewController: UIViewController {
         return loginView.passwordTextField.text
     }
     
+    //animation
+    var leadingEdgeOnScreen: CGFloat = 16
+    var leadingEdgeOffScreen: CGFloat = -1000
+    
+    var stackViewLeadingAnchor: NSLayoutConstraint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -44,21 +50,28 @@ class LoginViewController: UIViewController {
         super.viewDidDisappear(animated)
         signInButton.configuration?.showsActivityIndicator = false
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animate()
+    }
 }
 
 extension LoginViewController {
     private func style() {
         
-        bankBankingLogoLabel.translatesAutoresizingMaskIntoConstraints = false
-        bankBankingLogoLabel.textAlignment = .center
-        bankBankingLogoLabel.text = "BankyBanking"
-        bankBankingLogoLabel.font = .systemFont(ofSize: 40)
+        bankyBankingLogoLabel.translatesAutoresizingMaskIntoConstraints = false
+        bankyBankingLogoLabel.textAlignment = .center
+        bankyBankingLogoLabel.text = "BankyBanking"
+        bankyBankingLogoLabel.font = .systemFont(ofSize: 40)
+        bankyBankingLogoLabel.alpha = 0
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.text = "Your premium source for all things banking!"
         descriptionLabel.font = .systemFont(ofSize: 22)
         descriptionLabel.numberOfLines = 2
         descriptionLabel.textAlignment = .center
+        descriptionLabel.alpha = 0
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -82,7 +95,7 @@ extension LoginViewController {
     
     private func layout() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(bankBankingLogoLabel)
+        stackView.addArrangedSubview(bankyBankingLogoLabel)
         stackView.addArrangedSubview(descriptionLabel)
         
         view.addSubview(loginView)
@@ -92,7 +105,6 @@ extension LoginViewController {
         NSLayoutConstraint.activate([
             
             //StackView
-            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             loginView.topAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 4),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
             
@@ -112,6 +124,9 @@ extension LoginViewController {
             errorLabel.trailingAnchor.constraint(equalTo: loginView.trailingAnchor)
             
         ])
+        
+        stackViewLeadingAnchor = stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: leadingEdgeOffScreen)
+        stackViewLeadingAnchor?.isActive = true
     }
 }
 
@@ -143,6 +158,23 @@ extension LoginViewController {
     private func configureView(withMessage message: String) {
         errorLabel.isHidden = false
         errorLabel.text = message
+    }
+}
+
+extension LoginViewController {
+    private func animate() {
+        let animator1 = UIViewPropertyAnimator(duration: 1, curve: .easeInOut) {
+            self.stackViewLeadingAnchor?.constant = self.leadingEdgeOnScreen
+            self.view.layoutIfNeeded()
+        }
+        animator1.startAnimation()
+        
+        let animator2 = UIViewPropertyAnimator(duration: 3, curve: .easeInOut) {
+            self.bankyBankingLogoLabel.alpha = 1
+            self.descriptionLabel.alpha = 1
+            self.view.layoutIfNeeded()
+        }
+        animator2.startAnimation(afterDelay: 0.2)
     }
 }
 
