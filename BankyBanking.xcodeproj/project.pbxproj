@@ -122,9 +122,9 @@
 		2A68F1F9280D9196004154D0 /* BankyBanking */ = {
 			isa = PBXGroup;
 			children = (
-				2A44CB4B281668C3007FA5BD /* Components */,
 				2A68F1FA280D9196004154D0 /* AppDelegate.swift */,
 				2A8830AF281275DA00269FDB /* MainViewController.swift */,
+				2A44CB4B281668C3007FA5BD /* Components */,
 				2A68F20F280D9558004154D0 /* Login */,
 				2AF7C237280EECF2005DEC89 /* Onboarding */,
 				2ABCB5DB2813D54800E9114E /* AccountSummary */,
